@@ -69,4 +69,9 @@
 ![Схема инференса](inference.png)
 
 
+## Полезная статья
+
+- [FinBERT](https://onlinelibrary.wiley.com/doi/epdf/10.1111/1911-3846.12832)
+
+
 
