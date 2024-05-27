@@ -1,11 +1,11 @@
 # Ignore PyCharm files
 .idea/
 
-# Ignore dataset files
-faces_data/
-
 # Ignore model files
 model/
 
 # Ignore MLflow local logs
 mlruns/
+
+# Ignore dataset files (auto added by dvc)
+/faces_data
