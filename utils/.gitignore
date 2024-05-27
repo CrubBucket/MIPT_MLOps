@@ -1,0 +1,7 @@
+# Ignore training and inference paths
+inference.csv
+lightning_logs/
+outputs/
+
+# Ignore cache files
+__pycache__/

@@ -1,0 +1,38 @@
+params:
+  SEED: 27
+
+data:
+  images_path: ../faces_data/images
+  gt_path: ../faces_data/gt.csv
+  test_path: ../faces_data/test
+  small_test_path: ../faces_data/small_test
+  inference_output: ./inference.csv
+  fraction: 0.85
+  batch_size: 2
+
+model:
+  image_channels: 3
+  num_classes: 28
+  model_img_size: 96
+
+artifacts:
+  experiment_name: gavr_experiment
+  trained_model_path: ../model/facepoints_model.ckpt
+
+
+training:
+  max_epochs: 2
+  log_every_n_steps: 5
+
+
+callbacks:
+  checkpoint:
+    dirpath: ./runs/model_0/
+    filename: "{epoch}-{val_loss:.3f}"
+    monitor: val_loss
+    mode: min
+    save_top_k: 1
+  early_stop:
+    monitor: val_loss
+    mode: min
+    patience: 15
