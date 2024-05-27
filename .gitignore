@@ -6,3 +6,6 @@ faces_data/
 
 # Ignore model files
 model/
+
+# Ignore MLflow local logs
+mlruns/

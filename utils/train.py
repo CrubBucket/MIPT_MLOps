@@ -36,6 +36,10 @@ def main(cfg: DictConfig):
         save_top_k=cfg.callbacks.checkpoint.save_top_k,
     )
 
+    mlflow_logger = pl.loggers.MLFlowLogger(
+        experiment_name=cfg.artifacts.experiment_name,
+        tracking_uri="http://localhost:5050")
+
     early_stopping = EarlyStopping(monitor=cfg.callbacks.early_stop.monitor,
                                    mode=cfg.callbacks.early_stop.mode,
                                    patience=cfg.callbacks.early_stop.patience)
@@ -44,6 +48,7 @@ def main(cfg: DictConfig):
         max_epochs=cfg.training.max_epochs,
         callbacks=[early_stopping, training_module_ckpt],
         log_every_n_steps=cfg.training.log_every_n_steps,
+        logger=mlflow_logger,
     )
 
     training_module = MyTrainingModule(model=model)
