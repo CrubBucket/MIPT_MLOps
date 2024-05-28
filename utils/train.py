@@ -38,7 +38,7 @@ def main(cfg: DictConfig):
 
     mlflow_logger = pl.loggers.MLFlowLogger(
         experiment_name=cfg.artifacts.experiment_name,
-        tracking_uri="http://localhost:5050")
+        tracking_uri=f"http://localhost:{cfg.artifacts.mlflow_port}")
 
     early_stopping = EarlyStopping(monitor=cfg.callbacks.early_stop.monitor,
                                    mode=cfg.callbacks.early_stop.mode,

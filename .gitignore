@@ -9,3 +9,7 @@ mlruns/
 
 # Ignore dataset files (auto added by dvc)
 /faces_data
+
+/outputs
+*.csv
+

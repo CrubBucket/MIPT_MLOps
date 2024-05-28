@@ -6,7 +6,7 @@ data:
   gt_path: ../faces_data/gt.csv
   test_path: ../faces_data/test
   small_test_path: ../faces_data/small_test
-  inference_output: ./inference.csv
+  inference_output: ../inference.csv
   fraction: 0.85
   batch_size: 2
 
@@ -16,7 +16,8 @@ model:
   model_img_size: 96
 
 artifacts:
-  experiment_name: gavr_experiment
+  experiment_name: gavr_experiment_3
+  mlflow_port: 5000
   trained_model_path: ../model/facepoints_model.ckpt
 
 

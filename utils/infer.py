@@ -31,8 +31,6 @@ def main(cfg: DictConfig):
         w.writeheader()
         w.writerow(outputs)
 
-    return
-
 
 if __name__ == "__main__":
     main()
